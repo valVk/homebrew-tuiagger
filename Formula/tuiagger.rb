@@ -1,22 +1,35 @@
-class Tuiagger < Formula
-  desc "TUI Swagger/OpenAPI Documentation Viewer"
-  homepage "https://github.com/valVK/twagger"
-  url "https://github.com/valVK/tuiagger/archive/refs/tags/v1.0.8.tar.gz"
-  sha256 "5ce9f057f1f58c68e872714386ef3f9a516d9d23362839f8138de2e73f7e10a6"
-  license "MIT"
+# Homebrew formula for tuiagger — a terminal UI for viewing and
+# interacting with OpenAPI/Swagger documentation.
+#
+# Tap: valVK/twagger (this repo). Source lives at github.com/valVK/tuiagger.
+#
+# v2.0.0 is a major bump: the app was rewritten from Node/Ink/TS to Go —
+# this formula replaces the old Node-based one wholesale (no more
+# `depends_on "node"` / `npm install`).
+#
+# Cutting a release:
+#   1. git tag v2.0.0 && git push --tags (in the tuiagger repo)
+#   2. curl -sL https://github.com/valVK/tuiagger/archive/refs/tags/v2.0.0.tar.gz | shasum -a 256
+#   3. Update url/sha256 below and push
 
-  depends_on "node"
+class Tuiagger < Formula
+  desc "Terminal UI for viewing and interacting with OpenAPI/Swagger documentation"
+  homepage "https://github.com/valVK/tuiagger"
+  url "https://github.com/valVK/tuiagger/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "" # filled in when v2.0.0 is actually tagged — see comment above
+  license "MIT"
+  head "https://github.com/valVK/tuiagger.git", branch: "master"
+
+  depends_on "go" => :build
 
   def install
-    system "npm", "install", "--no-audit", "--no-fund"
-    system "npm", "run", "build"
-    system "npm", "prune", "--omit=dev"
-    libexec.install Dir["*"]
-    chmod 0755, libexec/"dist/index.js"
-    bin.install_symlink libexec/"dist/index.js" => "tuiagger"
+    # main.version is a `const`, not a `var` — Go's `-X` linker flag only
+    # rewrites package-level string variables, so there's nothing to inject
+    # here. Just strip debug info (-s -w), standard for a released binary.
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tuiagger"
   end
 
   test do
-    assert_match "TUI Swagger", shell_output("#{bin}/tuiagger --help 2>&1")
+    assert_match "tuiagger", shell_output("#{bin}/tuiagger --version")
   end
 end
