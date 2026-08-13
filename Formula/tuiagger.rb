@@ -16,7 +16,7 @@ class Tuiagger < Formula
   desc "Terminal UI for viewing and interacting with OpenAPI/Swagger documentation"
   homepage "https://github.com/valVK/tuiagger"
   url "https://github.com/valVK/tuiagger/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "" # filled in when v2.0.0 is actually tagged — see comment above
+  sha256 "24eecdbf05c95bf564ef377791d2821e2995e88c52566635e3345831f4f24b12" # filled in when v2.0.0 is actually tagged — see comment above
   license "MIT"
   head "https://github.com/valVK/tuiagger.git", branch: "master"
 
