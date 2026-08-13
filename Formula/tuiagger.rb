@@ -1,41 +1,28 @@
-# Homebrew formula for tuiagger — a terminal UI for viewing and
-# interacting with OpenAPI/Swagger documentation.
-#
-# Tap: valVK/tuiagger (this repo, github.com/valVK/homebrew-tuiagger).
-# Source lives at github.com/valVK/tuiagger.
-#
-# This formula installs a precompiled binary (clients don't have Go
-# installed) — it's rewritten automatically by the "Release" workflow in
-# the tuiagger repo (.github/workflows/release.yml) on every tagged
-# release, via the update-tap job pushing here with HOMEBREW_TAP_TOKEN.
-# Don't hand-edit url/sha256 values below; they get overwritten on the
-# next release. Manual edits are fine for anything else (desc, license).
-
 class Tuiagger < Formula
   desc "Terminal UI for viewing and interacting with OpenAPI/Swagger documentation"
   homepage "https://github.com/valVK/tuiagger"
-  version "2.0.0"
+  version "2.0.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/valVK/tuiagger/releases/download/v2.0.0/tuiagger_darwin_arm64.tar.gz"
-      sha256 "" # filled in by CI on release
+      url "https://github.com/valVK/tuiagger/releases/download/v2.0.1/tuiagger_darwin_arm64.tar.gz"
+      sha256 ""
     end
     on_intel do
-      url "https://github.com/valVK/tuiagger/releases/download/v2.0.0/tuiagger_darwin_amd64.tar.gz"
-      sha256 "" # filled in by CI on release
+      url "https://github.com/valVK/tuiagger/releases/download/v2.0.1/tuiagger_darwin_amd64.tar.gz"
+      sha256 ""
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/valVK/tuiagger/releases/download/v2.0.0/tuiagger_linux_amd64.tar.gz"
-      sha256 "" # filled in by CI on release
+      url "https://github.com/valVK/tuiagger/releases/download/v2.0.1/tuiagger_linux_amd64.tar.gz"
+      sha256 "51760a3c1048c9f09dec194fce683644a115fd7baf06858d4eed3da876014df4"
     end
     on_arm do
-      url "https://github.com/valVK/tuiagger/releases/download/v2.0.0/tuiagger_linux_arm64.tar.gz"
-      sha256 "" # filled in by CI on release
+      url "https://github.com/valVK/tuiagger/releases/download/v2.0.1/tuiagger_linux_arm64.tar.gz"
+      sha256 ""
     end
   end
 
