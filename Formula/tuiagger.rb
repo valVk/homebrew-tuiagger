@@ -1,28 +1,28 @@
 class Tuiagger < Formula
   desc "Terminal UI for viewing and interacting with OpenAPI/Swagger documentation"
   homepage "https://github.com/valVK/tuiagger"
-  version "2.0.2"
+  version "2.1.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/valVK/tuiagger/releases/download/v2.0.2/tuiagger_darwin_arm64.tar.gz"
-      sha256 "f8a791af6464b2f464447ae9d1ceddf65a77e89bb9005c57652cd1cabf4b1094"
+      url "https://github.com/valVK/tuiagger/releases/download/v2.1.0/tuiagger_darwin_arm64.tar.gz"
+      sha256 "bc9598ac7b0fd118b297630bbf56143129a196ef391fccc40823b944ed9565f3"
     end
     on_intel do
-      url "https://github.com/valVK/tuiagger/releases/download/v2.0.2/tuiagger_darwin_amd64.tar.gz"
-      sha256 "27cd409084f72164a15c5abb97e1c719a64b020a4f3bbc8a201e4dcf8914afd8"
+      url "https://github.com/valVK/tuiagger/releases/download/v2.1.0/tuiagger_darwin_amd64.tar.gz"
+      sha256 "d8efad3d510ceae2baf3a774330ce483103b8751a99e9128d7fdaba715f72a1d"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/valVK/tuiagger/releases/download/v2.0.2/tuiagger_linux_amd64.tar.gz"
-      sha256 "03de51504bf9760d6a916939cc60b2b73a7cc25c9ef83615678503f2bed1347a"
+      url "https://github.com/valVK/tuiagger/releases/download/v2.1.0/tuiagger_linux_amd64.tar.gz"
+      sha256 "c201bba5a0789b31d63f9e5edb18f07fde9a4176105c89f9d488ce4005c96aa1"
     end
     on_arm do
-      url "https://github.com/valVK/tuiagger/releases/download/v2.0.2/tuiagger_linux_arm64.tar.gz"
-      sha256 "d296363078000fec9ed146565bf9863860eb48f6673c742ab529bfd67aa4831f"
+      url "https://github.com/valVK/tuiagger/releases/download/v2.1.0/tuiagger_linux_arm64.tar.gz"
+      sha256 "fbeef32025ea4fd097b1ec1cc46706ef323e63a3f9b1f6dcec7e88097f2a13a0"
     end
   end
 
